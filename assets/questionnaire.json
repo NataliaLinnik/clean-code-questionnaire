@@ -1,0 +1,148 @@
+[
+  {
+    "question": "Which of these animals is a mammal?",
+    "answers": [
+      {
+        "Ant": false
+      },
+      {
+        "Bee": false
+      },
+      {
+        "Cat": true
+      }
+    ]
+  },
+  {
+    "question": "What is the sum of 2+3?",
+    "answers": [
+      {
+        "2": false
+      },
+      {
+        "5": true
+      },
+      {
+        "6": false
+      }
+    ]
+  },
+  {
+    "question": "How many time zones are there in Russia?",
+    "answers": [
+      {
+        "11": true
+      },
+      {
+        "value": 9,
+        "correct": false
+      },
+      {
+        "value": 17,
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How many stripes are there on the US flag?",
+    "answers": [
+      {
+        "value": 13,
+        "correct": true
+      },
+      {
+        "value": 15,
+        "correct": false
+      },
+      {
+        "value": 11,
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which language has the most words (according to dictionary entries)?",
+    "answers": [
+      {
+        "value": "German",
+        "correct": false
+      },
+      {
+        "value": "English",
+        "correct": true
+      },
+      {
+        "value": "Italian",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How many keys does a classic piano have?",
+    "answers": [
+      {
+        "value": 96,
+        "correct": false
+      },
+      {
+        "value": 88,
+        "correct": true
+      },
+      {
+        "value": 72,
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was Netflix founded?",
+    "answers": [
+      {
+        "value": 1997,
+        "correct": true
+      },
+      {
+        "value": 2009,
+        "correct": false
+      },
+      {
+        "value": 2015,
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first issue of Vogue published?",
+    "answers": [
+      {
+        "value": 1997,
+        "correct": true
+      },
+      {
+        "value": 2009,
+        "correct": false
+      },
+      {
+        "value": 2015,
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following empires had no written language?",
+    "answers": [
+      {
+        "value": "Egyptian",
+        "correct": false
+      },
+      {
+        "value": "Incan",
+        "correct": true
+      },
+      {
+        "value": "Roman",
+        "correct": false
+      }
+    ]
+  }
+]
