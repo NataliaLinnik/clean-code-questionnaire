@@ -1,3 +1,6 @@
+
+
+
 # Questionnaire
 
 This project is a part of a clean code training exercise. The following code make it possible to render a questionnaire, select the answer and will return the results.
@@ -68,3 +71,63 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# TODO:
+- Update README.md file with task description from: [LINK](https://ccd-school.de/coding-dojo/agility-katas/filling-out-a-questionnaire-i/)
+
+- Create Flow diagram
+
+- User answers we will put in array of numbers like: [2,2,3,1,0,2,4]. Initial array will be [3,3,3,3,3,3,3] filled with "I dont know answers",
+
+```js
+    for loop ( 9 ){
+        [0,1,0,1,1,1,1]
+        array.push(comonentToRenderResults(2,object));
+    }
+
+    calculateScore(answers[index], object[index].answers) {
+
+    displayScore()
+    calculate everytin
+
+    return true/fasle
+    }
+```
+
+```
+One component that will render results
+That component will receive two params:
+- question 
+
+{
+  "question": "Which of these animals is a mammal?",
+  "answers": [
+    {
+      "Ant": false
+    },
+    {
+      "Bee": false
+    },
+    {
+      "Cat": true
+    }
+  ]
+},
+
+- answer: 2
+Output: true/false
+
+{"answer": "bla bla bla"}
+
+<div>
+
+  <p>Question: {{question}}</p>
+
+  <div ngIf="answer is correct">
+    <p> Your answer {{Cat}} is correct
+  </div>
+  <div else>
+    <p>Your answer {{Cat}} is not correct
+  </div>
+```
