@@ -34,12 +34,10 @@
         "11": true
       },
       {
-        "value": 9,
-        "correct": false
+        "9": false
       },
       {
-        "value": 17,
-        "correct": false
+        "17": false
       }
     ]
   },
@@ -47,16 +45,13 @@
     "question": "How many stripes are there on the US flag?",
     "answers": [
       {
-        "value": 13,
-        "correct": true
+        "13": true
       },
       {
-        "value": 15,
-        "correct": false
+        "15": false
       },
       {
-        "value": 11,
-        "correct": false
+        "11": false
       }
     ]
   },
@@ -64,16 +59,13 @@
     "question": "Which language has the most words (according to dictionary entries)?",
     "answers": [
       {
-        "value": "German",
-        "correct": false
+        "German": false
       },
       {
-        "value": "English",
-        "correct": true
+        "English": true
       },
       {
-        "value": "Italian",
-        "correct": false
+        "Italian": false
       }
     ]
   },
@@ -81,16 +73,13 @@
     "question": "How many keys does a classic piano have?",
     "answers": [
       {
-        "value": 96,
-        "correct": false
+        "96": false
       },
       {
-        "value": 88,
-        "correct": true
+        "88": true
       },
       {
-        "value": 72,
-        "correct": false
+        "72": false
       }
     ]
   },
@@ -98,16 +87,13 @@
     "question": "When was Netflix founded?",
     "answers": [
       {
-        "value": 1997,
-        "correct": true
+        "1997": true
       },
       {
-        "value": 2009,
-        "correct": false
+        "2009": false
       },
       {
-        "value": 2015,
-        "correct": false
+        "2015": false
       }
     ]
   },
@@ -115,16 +101,13 @@
     "question": "When was the first issue of Vogue published?",
     "answers": [
       {
-        "value": 1997,
-        "correct": true
+        "1997": true
       },
       {
-        "value": 2009,
-        "correct": false
+        "2009": false
       },
       {
-        "value": 2015,
-        "correct": false
+        "2015": false
       }
     ]
   },
@@ -132,16 +115,13 @@
     "question": "Which of the following empires had no written language?",
     "answers": [
       {
-        "value": "Egyptian",
-        "correct": false
+        "Egyptian": false
       },
       {
-        "value": "Incan",
-        "correct": true
+        "Incan": true
       },
       {
-        "value": "Roman",
-        "correct": false
+        "Roman": false
       }
     ]
   }

@@ -1,0 +1,15 @@
+.checkButton {
+  border: 1px solid #61dafb;
+  background-color: #282c34;
+  color: #61dafb;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-top: 48px;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+    color: #282c34;
+    background-color: #61dafb;
+  }
+}
