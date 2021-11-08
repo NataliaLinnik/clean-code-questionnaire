@@ -1,17 +1,44 @@
-import logo from './logo.png';
-import './App.css';
-import Questionnaire from "./components/Questionnaire";
+import { useEffect, useState } from "react";
 
-function App() {
+import logo from './logo.png';
+import DATA from "./assets/questionnaire.json"
+
+import Questionnaire from "./components/Questionnaire";
+import Answers from "./components/Answers";
+
+import { getEmptyArrayForUserAnswers } from "./utils/questionnaireLogik";
+
+import './App.css';
+
+const App = () => {
+  const [userAnswers, setUserAnswers] = useState<number[]>([])
+  const [showAnswers, setShowAnswers] = useState(false)
+  
+  useEffect(() => {
+    const emptyUserArray = getEmptyArrayForUserAnswers(DATA.length)
+    setUserAnswers(emptyUserArray)
+  }, [])
+
+  const refreshUserAnswer = (index: number, answer: number) => {
+    const newAnswers = [...userAnswers]
+    newAnswers[index] = answer
+    setUserAnswers(newAnswers)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        
-       <Questionnaire/>
+        {!showAnswers ?
+          <Questionnaire
+            data={DATA}
+            setShowAnswers={() => setShowAnswers(true)}
+            userAnswers={userAnswers}
+            refreshUserAnswer={refreshUserAnswer} /> :
+          <Answers userAnswers={userAnswers}/>}
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
