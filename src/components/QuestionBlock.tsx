@@ -14,7 +14,7 @@ const QuestionBlock = ({ questionData, userAnswer, refreshUserAnswer }: Props): 
   const [answers, setAnswers] = useState(questionData.answers)
 
   useEffect(() => {
-    setAnswers([...answers, { 'Don`t know': false }])
+    setAnswers([...answers, { "label":'Don`t know', "value": false }])
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
@@ -34,8 +34,8 @@ const QuestionBlock = ({ questionData, userAnswer, refreshUserAnswer }: Props): 
       <div>
         {answers.map((answer: any, index: number) =>
           <AnswerOption
-            key={index} 
-            answerLabel={Object.keys(answer)[0]}
+            key={index+questionData.question} 
+            answerLabel={answer.label}
             answerIndex={index}
             checked={index === currentAnswerIndex}
             setCurrentAnswerIndex={setCurrentAnswerIndex}

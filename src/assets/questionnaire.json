@@ -3,13 +3,16 @@
     "question": "Which of these animals is a mammal?",
     "answers": [
       {
-        "Ant": false
+        "label": "Ant",
+        "value": false
       },
       {
-        "Bee": false
+        "label": "Bee",
+        "value": false
       },
       {
-        "Cat": true
+        "label": "Cat",
+        "value": true
       }
     ]
   },
@@ -17,13 +20,16 @@
     "question": "What is the sum of 2+3?",
     "answers": [
       {
-        "2": false
+        "label": "2",
+        "value": false
       },
       {
-        "5": true
+        "label": "5",
+        "value": true
       },
       {
-        "6": false
+        "label": "6",
+        "value": false
       }
     ]
   },
@@ -31,13 +37,16 @@
     "question": "How many time zones are there in Russia?",
     "answers": [
       {
-        "11": true
+        "label": "11",
+        "value": true
       },
       {
-        "9": false
+        "label": "9",
+        "value": false
       },
       {
-        "17": false
+        "label": "17",
+        "value": false
       }
     ]
   },
@@ -45,13 +54,16 @@
     "question": "How many stripes are there on the US flag?",
     "answers": [
       {
-        "13": true
+        "label": "13",
+        "value": true
       },
       {
-        "15": false
+        "label": "15",
+        "value": false
       },
       {
-        "11": false
+        "label": "11",
+        "value": false
       }
     ]
   },
@@ -59,13 +71,16 @@
     "question": "Which language has the most words (according to dictionary entries)?",
     "answers": [
       {
-        "German": false
+        "label": "German",
+        "value": false
       },
       {
-        "English": true
+        "label": "English",
+        "value": true
       },
       {
-        "Italian": false
+        "label": "Italian",
+        "value": false
       }
     ]
   },
@@ -73,13 +88,16 @@
     "question": "How many keys does a classic piano have?",
     "answers": [
       {
-        "96": false
+        "label": "96",
+        "value": false
       },
       {
-        "88": true
+        "label": "88",
+        "value": true
       },
       {
-        "72": false
+        "label": "72",
+        "value": false
       }
     ]
   },
@@ -87,13 +105,16 @@
     "question": "When was Netflix founded?",
     "answers": [
       {
-        "1997": true
+        "label": "1997",
+        "value": true
       },
       {
-        "2009": false
+        "label": "2009",
+        "value": false
       },
       {
-        "2015": false
+        "label": "2015",
+        "value": false
       }
     ]
   },
@@ -101,13 +122,16 @@
     "question": "When was the first issue of Vogue published?",
     "answers": [
       {
-        "1997": true
+        "label": "1892",
+        "value": true
       },
       {
-        "2009": false
+        "label": "1960",
+        "value": false
       },
       {
-        "2015": false
+        "label": "2000",
+        "value": false
       }
     ]
   },
@@ -115,13 +139,16 @@
     "question": "Which of the following empires had no written language?",
     "answers": [
       {
-        "Egyptian": false
+        "label": "Egyptian",
+        "value": false
       },
       {
-        "Incan": true
+        "label": "Incan",
+        "value": true
       },
       {
-        "Roman": false
+        "label": "Roman",
+        "value": false
       }
     ]
   }

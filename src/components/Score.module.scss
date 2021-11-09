@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .resultBlock {
+    margin-bottom: 32px;
+
+    .question {
+      font-size: 24px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .answerContainer {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+
+      .answerLine {
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+  }
+}

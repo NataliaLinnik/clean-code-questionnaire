@@ -21,7 +21,7 @@ const Questionnaire = ({ data, userAnswers, setShowAnswers, refreshUserAnswer }:
             userAnswer={userAnswers[questionIndex]}
             refreshUserAnswer={(answerIndex: number) => refreshUserAnswer(questionIndex, answerIndex)}
           />)}
-        <button className={styles.checkButton} type="submit">check my answers</button>
+        <button className={styles.checkButton} type="submit">show my score...</button>
       </form>
     </div>
   )
