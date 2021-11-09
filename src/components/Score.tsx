@@ -1,4 +1,5 @@
 import React from 'react'
+import { calcScore } from "../utils/questionnaireLogik"
 
 import styles from './Score.module.scss'
 
@@ -6,14 +7,15 @@ interface Props {
   userAnswers: any
 }
 
-const calcScore = (counter: number, length: number) => {
-  if (counter > 0) {
-    return Math.round(counter * 100 / length)
-  }
-  return 0
-}
-  
 const Score = ({ userAnswers }: Props): React.ReactElement => {
+
+  const getUserAnswerString = (result: any) => {
+    if (result.correctAnswer) {
+      return `Your answer '${result.userAnswer}' is wrong`
+    }
+    return `Your answer '${result.userAnswer}' is correct`
+  }
+
   return (
     <div>
       <h1>Your score</h1>
@@ -23,7 +25,7 @@ const Score = ({ userAnswers }: Props): React.ReactElement => {
           <div className={styles.resultBlock}>
             <p className={styles.question}>{result.question}</p>
             <div className={styles.answerContainer}>
-              <span className={styles.answerLine}>{result.userAnswers}</span>
+              <span className={styles.answerLine}>{getUserAnswerString(result)}</span>
               {result.correctAnswer && <span className={styles.answerLine}>Correct answer: {result.correctAnswer}</span>}
             </div>
           </div>

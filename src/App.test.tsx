@@ -1,8 +1,105 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { getAnalysedResults, getCorrectAnswerLabel, isUserAnswerTrue, getUserAnswerLabel, calcScore } from "./utils/questionnaireLogik";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const sampleData = [
+  {
+    "question": "Which of these animals is a mammal?",
+    "answers": [
+      {
+        "label": "Ant",
+        "value": false
+      },
+      {
+        "label": "Bee",
+        "value": false
+      },
+      {
+        "label": "Cat",
+        "value": true
+      }
+    ]
+  },
+  {
+    "question": "What is the sum of 2+3?",
+    "answers": [
+      {
+        "label": "2",
+        "value": false
+      },
+      {
+        "label": "5",
+        "value": true
+      },
+      {
+        "label": "6",
+        "value": false
+      }
+    ]
+  },
+]
+
+const userSampleAnswers= [3, 1]
+
+let sampleResult = {
+  score: 1,
+  results: [
+    { question: 'Which of these animals is a mammal?', userAnswer: 'Don`t know', correctAnswer: "Cat" },
+    { question: "What is the sum of 2+3?", userAnswer: "5", correctAnswer: '' }
+  ]
+}
+      
+test('should evaluate user results', () => {
+  const result = getAnalysedResults(sampleData, userSampleAnswers)
+  expect(result).toStrictEqual(sampleResult);
+});
+
+test('should check for correct answer label', () => {
+  const correctAnswer = getCorrectAnswerLabel(sampleData[0].answers)
+  expect(correctAnswer).toStrictEqual("Cat");
+});
+
+test('should check right user answer', () => {
+  const isAnswerTrue = isUserAnswerTrue(sampleData[0].answers, 2)
+  expect(isAnswerTrue).toStrictEqual(true);
+});
+
+test('should check user "Don`t know" answer', () => {
+  const isAnswerTrue = isUserAnswerTrue(sampleData[0].answers, 3)
+  expect(isAnswerTrue).toStrictEqual(false);
+});
+
+test('should check user wrong answer', () => {
+  const isAnswerTrue = isUserAnswerTrue(sampleData[0].answers, 0)
+  expect(isAnswerTrue).toStrictEqual(false);
+});
+
+test('should check user answer label', () => {
+  const userAnswerLabel = getUserAnswerLabel(sampleData[0].answers, 0)
+  expect(userAnswerLabel).toStrictEqual("Ant");
+});
+
+test('should check user answer label "Don`t know"', () => {
+  const userAnswerLabel = getUserAnswerLabel(sampleData[0].answers, 3)
+  expect(userAnswerLabel).toStrictEqual('Don`t know');
+});
+
+test('should calculate score percent by 5 of 10 right questions', () => {
+  const percentage = calcScore(5, 10)
+  expect(percentage).toStrictEqual(50);
+});
+
+test('should calculate score percent by 0 of 10 right questions', () => {
+  const percentage = calcScore(0, 10)
+  expect(percentage).toStrictEqual(0);
+});
+
+
+test('should calculate score percent by 10 of 10 right questions', () => {
+  const percentage = calcScore(10, 10)
+  expect(percentage).toStrictEqual(100);
+});
+
+
+test('should calculate score percent by 1 of 10 right questions', () => {
+  const percentage = calcScore(1, 10)
+  expect(percentage).toStrictEqual(10);
 });
