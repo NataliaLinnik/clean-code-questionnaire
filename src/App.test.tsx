@@ -136,7 +136,7 @@ test('should add additional "Don`t know" option', () => {
   expect(newAnswersArray).toStrictEqual(answersWithFourthOption);
 });
 
-test('should check additional "Don`t know" option for false value', () => {
+test('should check additional "Don`t know" option for `false` value', () => {
   const newAnswersArray = addAdditionalOptionToAnswers(sampleData[0].answers)
   expect(newAnswersArray[3].value).toStrictEqual(false);
 });

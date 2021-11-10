@@ -2,7 +2,7 @@ const getEmptyArrayForUserAnswers = (length: number) => Array(length).fill(3)
 
 const getAnalysedResults = (data: any, userAnswers: any) => {
   let scoreResults = { score: 0, results: [{ question: '', userAnswer: '', correctAnswer: '' }] }
-  let rightAnswersCounter = 0
+  let scoreCounter = 0
     
   for (let questionIndex = 0; questionIndex < data.length; questionIndex++) {
     const userAnswerIndex = userAnswers[questionIndex]
@@ -12,12 +12,12 @@ const getAnalysedResults = (data: any, userAnswers: any) => {
     scoreResults.results[questionIndex] = ({ question: currentQuestion.question, userAnswer: userAnswerLabel, correctAnswer: '' })
 
     if (isUserAnswerTrue(currentQuestion.answers, userAnswerIndex)) {
-      rightAnswersCounter++
+      scoreCounter++
     } else {
       scoreResults.results[questionIndex].correctAnswer = getCorrectAnswerLabel(currentQuestion.answers)
     }
   }
-  scoreResults.score = rightAnswersCounter
+  scoreResults.score = scoreCounter
   return scoreResults
 }
   
@@ -46,9 +46,9 @@ const calcScore = (counter: number, length: number) => {
   return 0
 }
   
-const updateUserAnswers = (userAnswers: number[], answer: number, index: number) => {
+const updateUserAnswers = (userAnswers: number[], answerIndex: number, questionIndex: number) => {
   const newAnswers = [...userAnswers]
-  newAnswers[index] = answer
+  newAnswers[questionIndex] = answerIndex
 
   return newAnswers
 }

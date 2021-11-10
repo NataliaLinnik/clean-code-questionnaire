@@ -19,8 +19,8 @@ const App = () => {
     setUserAnswers(emptyUserArray)
   }, [])
 
-  const refreshUserAnswer = (index: number, answer: number) => {
-    setUserAnswers(updateUserAnswers(userAnswers, answer, index))
+  const refreshUserAnswer = (questionIndex: number, answerIndex: number) => {
+    setUserAnswers(updateUserAnswers(userAnswers, answerIndex, questionIndex))
   }
   
   return (
@@ -32,7 +32,8 @@ const App = () => {
             data={DATA}
             setShowAnswers={() => setShowAnswers(true)}
             userAnswers={userAnswers}
-            refreshUserAnswer={refreshUserAnswer} /> :
+            refreshUserAnswer={refreshUserAnswer}
+            /> :
           <Score userAnswers={getAnalysedResults(DATA, userAnswers)}/>}
       </header>
     </div>
