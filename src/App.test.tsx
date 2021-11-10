@@ -1,4 +1,4 @@
-import { getAnalysedResults, getCorrectAnswerLabel, isUserAnswerTrue, getUserAnswerLabel, calcScore } from "./utils/questionnaireLogik";
+import { getAnalysedResults, getCorrectAnswerLabel, isUserAnswerTrue, getUserAnswerLabel, calcScore, updateUserAnswers, addAdditionalOptionToAnswers } from "./utils/questionnaireLogik";
 
 const sampleData = [
   {
@@ -46,7 +46,29 @@ let sampleResult = {
     { question: "What is the sum of 2+3?", userAnswer: "5", correctAnswer: '' }
   ]
 }
-      
+  
+const userAnswersList = [3, 1, 2, 0, 2, 3, 1, 0]
+const updatedUserAnswersList = [3, 2, 2, 0, 2, 3, 1, 0]
+
+const answersWithFourthOption = [
+      {
+        "label": "Ant",
+        "value": false
+      },
+      {
+        "label": "Bee",
+        "value": false
+      },
+      {
+        "label": "Cat",
+        "value": true
+      },
+      {
+        "label": "Don`t know",
+        "value": false
+      }
+    ]
+
 test('should evaluate user results', () => {
   const result = getAnalysedResults(sampleData, userSampleAnswers)
   expect(result).toStrictEqual(sampleResult);
@@ -102,4 +124,19 @@ test('should calculate score percent by 10 of 10 right questions', () => {
 test('should calculate score percent by 1 of 10 right questions', () => {
   const percentage = calcScore(1, 10)
   expect(percentage).toStrictEqual(10);
+});
+
+test('should refresh user answers list', () => {
+  const newUserAnswersArray = updateUserAnswers(userAnswersList, 2, 1)
+  expect(newUserAnswersArray).toStrictEqual(updatedUserAnswersList);
+});
+
+test('should add additional "Don`t know" option', () => {
+  const newAnswersArray = addAdditionalOptionToAnswers(sampleData[0].answers)
+  expect(newAnswersArray).toStrictEqual(answersWithFourthOption);
+});
+
+test('should check additional "Don`t know" option for false value', () => {
+  const newAnswersArray = addAdditionalOptionToAnswers(sampleData[0].answers)
+  expect(newAnswersArray[3].value).toStrictEqual(false);
 });

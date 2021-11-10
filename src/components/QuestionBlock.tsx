@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { addAdditionalOptionToAnswers } from "../utils/questionnaireLogik"
 import AnswerOption from "./AnswerOption"
 
 import styles from './QuestionBlock.module.scss'
@@ -14,7 +15,7 @@ const QuestionBlock = ({ questionData, userAnswer, refreshUserAnswer }: Props): 
   const [answers, setAnswers] = useState(questionData.answers)
 
   useEffect(() => {
-    setAnswers([...answers, { "label":'Don`t know', "value": false }])
+    setAnswers(addAdditionalOptionToAnswers(answers))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   

@@ -46,5 +46,24 @@ const calcScore = (counter: number, length: number) => {
   return 0
 }
   
+const updateUserAnswers = (userAnswers: number[], answer: number, index: number) => {
+  const newAnswers = [...userAnswers]
+  newAnswers[index] = answer
 
-export {getEmptyArrayForUserAnswers, getAnalysedResults, getCorrectAnswerLabel, isUserAnswerTrue, getUserAnswerLabel, calcScore}
+  return newAnswers
+}
+
+const addAdditionalOptionToAnswers = (answers: any) => {
+  return [...answers, { "label":'Don`t know', "value": false }]
+}
+
+export {
+  getEmptyArrayForUserAnswers,
+  getAnalysedResults,
+  getCorrectAnswerLabel,
+  isUserAnswerTrue,
+  getUserAnswerLabel,
+  calcScore,
+  updateUserAnswers,
+  addAdditionalOptionToAnswers
+}

@@ -6,7 +6,7 @@ import DATA from "./assets/questionnaire.json"
 import Questionnaire from "./components/Questionnaire";
 import Score from "./components/Score";
 
-import { getAnalysedResults, getEmptyArrayForUserAnswers } from "./utils/questionnaireLogik";
+import { getAnalysedResults, getEmptyArrayForUserAnswers, updateUserAnswers } from "./utils/questionnaireLogik";
 
 import './App.css';
 
@@ -20,9 +20,7 @@ const App = () => {
   }, [])
 
   const refreshUserAnswer = (index: number, answer: number) => {
-    const newAnswers = [...userAnswers]
-    newAnswers[index] = answer
-    setUserAnswers(newAnswers)
+    setUserAnswers(updateUserAnswers(userAnswers, answer, index))
   }
   
   return (
